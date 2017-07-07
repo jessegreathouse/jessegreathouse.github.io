@@ -60,7 +60,7 @@
         // event handler
         $('.invite-btn').click(function(e){
             var btn = $(e.currentTarget);
-            var name = $(e.currentTarget).attr('data-user');
+            var name = btn.attr('data-user');
             inviteFriend(name);
             btn.remove();
         });

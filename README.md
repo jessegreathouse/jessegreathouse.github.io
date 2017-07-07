@@ -1,2 +1,4 @@
-# recueil
-A Collections of 1-off Code Samples and Assets
+# A Collection of Tutorials, Code Samples and Assets
+
+* [Web UI Developers: Stop doing this with JSON](https://jessegreathouse.github.io/stop-doing-this-with-JSON/)
+
