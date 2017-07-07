@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stop Self Informing UI Data Like This</title>
+</head>
+<body>
+
+<script language='javascript'>
+    JSDATA = {
+        people: [{
+            name: 'William',
+            age: '23',
+            address: '2201 Washington Blvd Houston, TX, 77022'
+        }]
+    };
+</script>
+
+<table id="contacts">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!-- I use buttons because links would serve no purpose -->
+<button class="invite-btn" data-user="fred">Invite Fred</button>
+<button class="invite-btn" data-user="wilma">Invite Wilma</button>
+<button class="invite-btn" data-user="barney">Invite Barney</button>
+<button class="invite-btn" data-user="betty">Invite Betty</button>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script language='javascript'>
+    var contactsTbl = $('#contacts');
+
+    // transformer
+    function loadContactInfo(person, myTable) {
+        myTable.find('tbody').append('<tr><td>' + person.name + '</td><td>' + person.age + '</td><td>' + person.address + '</td></tr>');
+    }
+
+    // method for knowing how to retrieve data
+    function inviteFriend(name) {
+        var url = 'users/' + name + '/contact.json';
+        $.getJSON( url, function(person) {
+            loadContactInfo(person, contactsTbl);
+        });
+    }
+
+    $(document).ready(function(){
+        // event handler
+        $('.invite-btn').click(function(e){
+            var btn = $(e.currentTarget);
+            var name = $(e.currentTarget).attr('data-user');
+            inviteFriend(name);
+            btn.remove();
+        });
+
+        // parsing data
+        for (var i=0; i < JSDATA.people.length; i++) {
+            loadContactInfo(JSDATA.people[i], contactsTbl);
+        }
+    });
+</script>
+
+</body>
+</html>

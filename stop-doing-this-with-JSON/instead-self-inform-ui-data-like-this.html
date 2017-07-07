@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instead Self Inform UI Data Like This</title>
+</head>
+<body>
+<table id="contacts">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>William</td>
+        <td>23</td>
+        <td>2201 Washington Blvd Houston, TX, 77022</td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Using links because they have an intrinsic purpose -->
+<a class="invite-link" href="users/fred/contact.html">Invite Fred</a>
+<a class="invite-link" href="users/wilma/contact.html">Invite Wilma</a>
+<a class="invite-link" href="users/barney/contact.html">Invite Barney</a>
+<a class="invite-link" href="users/betty/contact.html">Invite Betty</a>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script language='javascript'>
+    $(document).ready(function(){
+
+        // event handler
+        $('.invite-link').click(function(e) {
+            e.stopPropagation();
+            var element = $(e.currentTarget);
+
+            // dont need a method to know how to retrieve the data, that's what the href is for
+            $.get(element.attr('href'), function(data) {
+
+                // no need to transform the data! It's already in the desired format.
+                $('#contacts').find('tbody').append($(data).filter('#contact').find('tbody').html());
+            });
+            element.remove();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

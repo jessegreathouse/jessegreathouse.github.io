@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stop Engineering Front End Code Like This</title>
+</head>
+<body>
+
+<script language='javascript'>
+    JSDATA = {
+        people: [{
+            name: 'William',
+            age: '23',
+            address: '2201 Washington Blvd Houston, TX, 77022'
+        }]
+    };
+</script>
+
+<table id="contacts">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script language='javascript'>
+    var contactsTbl = $('#contacts');
+
+    // transformer
+    function loadContactInfo(person, myTable) {
+        myTable.find('tbody').append('<tr><td>' + person.name + '</td><td>' + person.age + '</td><td>' + person.address + '</td></tr>');
+    }
+
+    $(document).ready(function(){
+        // parsing data
+        for (var i=0; i < JSDATA.people.length; i++) {
+            loadContactInfo(JSDATA.people[i], contactsTbl);
+        }
+    });
+</script>
+
+</body>
+</html>
