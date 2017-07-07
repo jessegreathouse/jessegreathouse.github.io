@@ -1,4 +1,6 @@
-#Stop using JSON. Start using HTML.
+# Stop using JSON. Start using HTML
+
+## Stop engineering front-end code like this
 
 Too often, I see front end applications, when rendered, look something [like this](https://jessegreathouse.github.io/stop-doing-this-with-JSON/stop-engineering-front-end-code-like-this.html):
 
@@ -64,6 +66,8 @@ Too often, I see front end applications, when rendered, look something [like thi
 
 This is what we call, in the business, over-engineering. It’s arbitrarily using JSON as a data format, when the whole document is being produced in a perfectly acceptable data format: HTML. The choice of putting your data into JSON format, means that you will have also develop and maintain some kind of transformer for this data. For a simple webpage, this doesn't seem like a big deal. But when your web page sprawls into a giant site, it will require a lot of work to make sure data transformers are all maintained and working correctly, as your site's content evolves and changes.
 
+## Instead, engineer front-end code like this
+
 Instead of engineering your front end code, like the above example, do yourself a favor and engineer it [like this](https://jessegreathouse.github.io/stop-doing-this-with-JSON/instead-engineer-front-end-code-like-this.html):
 
 ```html
@@ -98,6 +102,8 @@ Instead of engineering your front end code, like the above example, do yourself 
 </html>
 
 ````
+
+## Stop self-informing UI data like this
 
 I know what you’re thinking… there’s a REASON Why it’s being engineered like the first example, and it’s true … but it’s a bad reason.
 
@@ -195,6 +201,8 @@ The above code does accomplish what is intended, but at too high of a cost. In a
 
 Doing it this way, has another consequence that you may not have considered. If the client doesn't have JavaScript, they client cannot use your UI. I can hear the Guffaws now, a client not using JavaScript? We don't want those kind of users, I hear some saying... Well, that's your perogative, but the next time your site breaks because Chrome, Firefox, or Edge release a new version, don't say I didn't warn you.
 
+## Instead, self-inform UI data like this
+
 Instead of falling into the trap of the above example, I'm going to suggest something that might sound wrong to many people, but I want you to really think it over. We use JSON because it's a data transfer format. It's not data, it's not the end result, it's an inbetween format. This is, no doubt, important for countless reasons, but I suggest to you that it's not necessary for your UI. Rather than having the data endpoints above rendered in JSON, I suggest you render them with plain HTML:
 [Fred](https://jessegreathouse.github.io/stop-doing-this-with-JSON/users/fred/contact.html)
 [Wilma](https://jessegreathouse.github.io/stop-doing-this-with-JSON/users/wilma/contact.html)
@@ -269,7 +277,11 @@ You can see from this example that by omitting the use of JSON as a middle-man f
 
 Now after seeing all that, and thinking with an objective point of view, why would I ever use JSON as a middle man for pages that my site informs to itself. Obviously we will always need to use JSON and transformers when dealing with outside API's, but lets not create more work for ourselves by arbitrarily transforming our OWN data in to JSON, just to transform it back again.
 
+## If you'd like to read more, please follow me or add me on the following social networks:
+* [Twitter](https://twitter.com/jessegreathouse)
+* [Linkedin](https://www.linkedin.com/in/jessegreathouse/)
+* [Github](https://github.com/jessegreathouse)
+* [Facebook](https://www.facebook.com/jessegreathouse/)
+* [jessegreathouse.com](https://www.jessegreathouse.com)
 
-
-
-
+### Jesse Greathouse has 13 years of experience in web development and is the CEO of [Greathouse Technology](https://www.greathouse.technology)
