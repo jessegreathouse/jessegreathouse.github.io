@@ -209,7 +209,7 @@ Instead of falling into the trap of the above example, I'm going to suggest some
 [Barney](https://jessegreathouse.github.io/stop-doing-this-with-JSON/users/barney/contact.html)
 [Betty](https://jessegreathouse.github.io/stop-doing-this-with-JSON/users/betty/contact.html)
 
-HTML is a data format, in the same way JSON is. Relax, lower your heart rate, and just take it what I'm saying. There's no benefit to using JSON instead of HTML. HTML is used to create a document. The document HTML produces is about organizing information. The stylistic presentation of your site should be informed by CSS, not the document structure. The difference in payload between an HTML document and a JSON response is usually so infentessimally small that it's not a realistic to cite as a reason for using JSON.
+HTML is a data format, in the same way JSON is. Relax, lower your heart rate, and just take in what I'm saying. There's no benefit to using JSON instead of HTML. HTML is used to create a document. The document HTML produces is about organizing information. The stylistic presentation of your site should be informed by CSS, not the document structure. The difference in payload between an HTML document and a JSON response is usually so infentessimally small that it's not a realistic to cite as a reason for using JSON.
 
 Lets face it, developers use JSON because they like it. If you can own that, then more power to you, but stop lying to yourselves and trying to make yourself believe there's a good reason for designing UIs this way. 90% of the UI's I see doing this are just creating more work for themselves and cluttering up their code with extra transformers and data retrieval methods.
 
